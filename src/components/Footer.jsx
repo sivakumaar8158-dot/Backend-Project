@@ -51,8 +51,6 @@ const Footer = () => {
             <li><Link to="/home" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Home</Link></li>
             <li><Link to="/donate-blood" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donate Blood</Link></li>
             <li><Link to="/find-donors" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Find Donors</Link></li>
-            <li><Link to="/blood-banks" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Blood Banks</Link></li>
-            <li><Link to="/camps" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donation Camps</Link></li>
             <li><Link to="/eligibility" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Eligibility Check</Link></li>
           </ul>
         </div>
