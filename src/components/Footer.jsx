@@ -48,9 +48,9 @@ const Footer = () => {
         <div>
           <h4 className='text-gray-900 font-semibold mb-4 text-sm uppercase tracking-wider'>Donor Services</h4>
           <ul className='space-y-2'>
-            <li><Link to="/home" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Home</Link></li>
-            <li><Link to="/donate-blood" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donate Blood</Link></li>
-            <li><Link to="/find-donors" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Find Donors</Link></li>
+            <li><Link to="/" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Home</Link></li>
+            <li><Link to="/donorpage" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donate Blood</Link></li>
+            <li><Link to="/finderspage" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Find Donors</Link></li>
             <li><Link to="/eligibility" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Eligibility Check</Link></li>
           </ul>
         </div>
