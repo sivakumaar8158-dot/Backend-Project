@@ -51,7 +51,6 @@ const Footer = () => {
             <li><Link to="/" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Home</Link></li>
             <li><Link to="/donorpage" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donate Blood</Link></li>
             <li><Link to="/finderspage" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Find Donors</Link></li>
-            <li><Link to="/eligibility" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Eligibility Check</Link></li>
           </ul>
         </div>
 
@@ -60,8 +59,8 @@ const Footer = () => {
           <h4 className='text-gray-900 font-semibold mb-4 text-sm uppercase tracking-wider'>Information</h4>
           <ul className='space-y-2'>
             <li><Link to="/bloodtypes" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Blood Types</Link></li>
-            <li><Link to="/donation-process" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donation Process</Link></li>
-            <li><Link to="/health-benefits" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Health Benefits</Link></li>
+            <li><Link to="/donationprocess" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donation Process</Link></li>
+            <li><Link to="/healthbenefits" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Health Benefits</Link></li>
             <li><Link to="/myths" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Myths & Facts</Link></li>
             <li><Link to="/faq" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>FAQ</Link></li>
           </ul>

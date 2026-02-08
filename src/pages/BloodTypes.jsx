@@ -68,7 +68,7 @@ const BloodTypes = () => {
         <span className="text-red-600 font-bold tracking-wider uppercase text-sm bg-red-50 px-4 py-2 rounded-full mb-4 inline-block">Education</span>
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
           Understanding <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">Blood Types</span>
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-red-600 to-orange-600">Blood Types</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Knowing your blood type is crucial for safe transfusions. Discover who you can help and who can help you.
@@ -79,14 +79,14 @@ const BloodTypes = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
         {bloodTypes.map((blood, index) => (
           <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
-            <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${blood.color} opacity-10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-500`}></div>
+            <div className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${blood.color} opacity-10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-500`}></div>
 
-            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${blood.color} flex items-center justify-center text-white text-2xl font-black shadow-lg mb-6 relative z-10`}>
+            <div className={`w-16 h-16 rounded-2xl bg-linear-to-br ${blood.color} flex items-center justify-center text-white text-2xl font-black shadow-lg mb-6 relative z-10`}>
               {blood.type}
             </div>
 
             <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10">{blood.type} Type</h3>
-            <p className="text-gray-600 text-sm mb-6 leading-relaxed relative z-10 min-h-[60px]">
+            <p className="text-gray-600 text-sm mb-6 leading-relaxed relative z-10 min-h-15">
               {blood.description}
             </p>
 
@@ -100,7 +100,7 @@ const BloodTypes = () => {
 
       {/* Compatibility Chart Section */}
       <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mb-20 border border-gray-100">
-        <div className="bg-gradient-to-r from-red-600 to-orange-600 p-8 md:p-12 text-center text-white">
+        <div className="bg-linear-to-r from-red-600 to-orange-600 p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Compatibility Guidelines</h2>
           <p className="text-red-100 max-w-2xl mx-auto">
             A quick reference guide to understand donor and recipient compatibility. Safety is our top priority.
