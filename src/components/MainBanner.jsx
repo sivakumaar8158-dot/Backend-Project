@@ -6,24 +6,26 @@ const MainBanner = () => {
   return (
     <div className='relative w-full overflow-hidden bg-gray-50'>
 
-      <div className='relative h-150 md:h-175'>
+     
+      <div className='relative min-h-[600px] lg:min-h-[700px] lg:h-[85vh] flex items-center'>
 
 
         <div className='absolute inset-0'>
           <img
             src={mainbanner}
             alt="Blood Donation Banner"
-            className='w-full h-full object-cover object-right'
+            className='w-full h-full object-cover object-right lg:object-[80%_center]' 
           />
 
-          <div className='absolute inset-0 bg-linear-to-r from-white via-transparent to-transparent'></div>
+          <div className='absolute inset-0 bg-linear-to-r from-white via-white/40 to-transparent lg:w-[65%]'></div>
+          <div className='absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent lg:hidden'></div> 
         </div>
 
 
-        <div className='relative max-w-7xl mx-auto px-6 md:px-8 h-full flex items-center'>
+        <div className='relative max-w-7xl mx-auto px-6 md:px-8 w-full h-full flex items-center z-10'>
 
 
-          <div className='max-w-xl space-y-8 animate-fade-in pt-12'>
+          <div className='max-w-xl lg:max-w-2xl space-y-8 animate-fade-in py-12 lg:py-0'>
 
 
             <div className="flex items-center gap-4 mb-6">
