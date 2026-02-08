@@ -6,6 +6,7 @@ import Register from "../auth/Register"
 import DonorPage from "../pages/DonorPage"
 import FindersPage from "../pages/FindersPage"
 import MainHome from "../pages/MainHome"
+import BloodTypes from "../pages/BloodTypes"
 
 const AppRoute = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoute = () => {
        <Route path="/donorpage" element={<DonorPage/>}/>
        <Route path="/finderspage" element={<FindersPage/>}/>
        <Route path="/mainhome" element={<MainHome/>}/>
+       <Route path="/bloodtypes" element={<BloodTypes/>}/>
     </Route>
        <Route path="/register" element={<Register/>}/>
        <Route path="/login" element={<Login/>}/>

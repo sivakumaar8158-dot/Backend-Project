@@ -59,7 +59,7 @@ const Footer = () => {
         <div>
           <h4 className='text-gray-900 font-semibold mb-4 text-sm uppercase tracking-wider'>Information</h4>
           <ul className='space-y-2'>
-            <li><Link to="/blood-types" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Blood Types</Link></li>
+            <li><Link to="/bloodtypes" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Blood Types</Link></li>
             <li><Link to="/donation-process" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Donation Process</Link></li>
             <li><Link to="/health-benefits" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Health Benefits</Link></li>
             <li><Link to="/myths" className='text-gray-600 hover:text-red-500 transition-colors duration-300 text-sm'>Myths & Facts</Link></li>

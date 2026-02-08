@@ -38,11 +38,11 @@ const MainHome = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
 
-            <div className="hidden md:block absolute top-12 left-[100px] right-[100px] h-1 bg-gradient-to-r from-red-200 via-orange-200 to-red-200 -z-10 rounded-full"></div>
+            <div className="hidden md:block absolute top-12 left-25 right-25 h-1 bg-linear-to-r from-red-200 via-orange-200 to-red-200 -z-10 rounded-full"></div>
 
 
             <div className="text-center relative bg-white p-6 rounded-2xl border border-transparent hover:border-red-100 hover:shadow-xl transition-all duration-300">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white shadow-lg mb-6 transform hover:rotate-12 transition-transform">
+              <div className="w-24 h-24 mx-auto bg-linear-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white shadow-lg mb-6 transform hover:rotate-12 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">1. Register</h3>
@@ -51,7 +51,7 @@ const MainHome = () => {
 
 
             <div className="text-center relative bg-white p-6 rounded-2xl border border-transparent hover:border-orange-100 hover:shadow-xl transition-all duration-300">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center text-white shadow-lg mb-6 transform hover:rotate-12 transition-transform">
+              <div className="w-24 h-24 mx-auto bg-linear-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center text-white shadow-lg mb-6 transform hover:rotate-12 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">2. Find or Donate</h3>
@@ -60,7 +60,7 @@ const MainHome = () => {
 
 
             <div className="text-center relative bg-white p-6 rounded-2xl border border-transparent hover:border-red-100 hover:shadow-xl transition-all duration-300">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-red-600 to-pink-600 rounded-full flex items-center justify-center text-white shadow-lg mb-6 transform hover:rotate-12 transition-transform">
+              <div className="w-24 h-24 mx-auto bg-linear-to-br from-red-600 to-pink-600 rounded-full flex items-center justify-center text-white shadow-lg mb-6 transform hover:rotate-12 transition-transform">
                 <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">3. Save Lives</h3>
