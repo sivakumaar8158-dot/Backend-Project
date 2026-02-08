@@ -7,7 +7,7 @@ const MainBanner = () => {
     <div className='relative w-full overflow-hidden bg-gray-50'>
 
      
-      <div className='relative min-h-[600px] lg:min-h-[700px] lg:h-[85vh] flex items-center'>
+      <div className='relative min-h-150 lg:min-h-175 lg:h-[85vh] flex items-center'>
 
 
         <div className='absolute inset-0'>

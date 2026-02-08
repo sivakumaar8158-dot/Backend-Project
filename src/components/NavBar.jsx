@@ -16,7 +16,7 @@ const NavBar = () => {
           <div className='absolute inset-0 bg-white rounded-xl scale-95'></div>
         
           <img 
-            className="relative h-16 w-16 rounded-xl shadow-2xl z-10 transform group-hover:scale-110 transition-transform duration-300" 
+            className="relative h-12 w-12 rounded-xl shadow-2xl z-10 transform group-hover:scale-110 transition-transform duration-300" 
             src={Logo} alt="mainlogo" />
         
         </div>

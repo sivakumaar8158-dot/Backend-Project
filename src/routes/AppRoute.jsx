@@ -5,6 +5,7 @@ import Login from "../auth/Login"
 import Register from "../auth/Register"
 import DonorPage from "../pages/DonorPage"
 import FindersPage from "../pages/FindersPage"
+import MainHome from "../pages/MainHome"
 
 const AppRoute = () => {
   return (
@@ -15,6 +16,7 @@ const AppRoute = () => {
        <Route path="/" element={<Home/>}/>
        <Route path="/donorpage" element={<DonorPage/>}/>
        <Route path="/finderspage" element={<FindersPage/>}/>
+       <Route path="/mainhome" element={<MainHome/>}/>
     </Route>
        <Route path="/register" element={<Register/>}/>
        <Route path="/login" element={<Login/>}/>
