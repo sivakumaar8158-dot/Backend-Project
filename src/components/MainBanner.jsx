@@ -13,10 +13,10 @@ const MainBanner = () => {
           <img
             src={mainbanner}
             alt="Blood Donation Banner"
-            className='w-full h-full object-cover object-center'
+            className='w-full h-full object-cover object-right'
           />
 
-          <div className='absolute inset-0 bg-linear-to-r from-white via-white/80 to-transparent'></div>
+          <div className='absolute inset-0 bg-linear-to-r from-white via-transparent to-transparent'></div>
         </div>
 
 
@@ -74,8 +74,8 @@ const MainBanner = () => {
 
 
             <div className='flex items-center gap-8 pt-6 border-t border-gray-200/60 mt-8'>
-            
-    
+
+
             </div>
 
           </div>
