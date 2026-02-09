@@ -1,12 +1,22 @@
 import mainbanner from '../assets/CleanBanner.png'
 import MainLogo from '../assets/MainLogo.png'
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 const MainBanner = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('currentUser');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
   return (
     <div className='relative w-full overflow-hidden bg-gray-50'>
 
-     
+
       <div className='relative min-h-150 lg:min-h-175 lg:h-[85vh] flex items-center'>
 
 
@@ -14,11 +24,11 @@ const MainBanner = () => {
           <img
             src={mainbanner}
             alt="Blood Donation Banner"
-            className='w-full h-full object-cover object-right lg:object-[80%_center]' 
+            className='w-full h-full object-cover object-right lg:object-[80%_center]'
           />
 
           <div className='absolute inset-0 bg-linear-to-r from-white via-white/40 to-transparent lg:w-[65%]'></div>
-          <div className='absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent lg:hidden'></div> 
+          <div className='absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent lg:hidden'></div>
         </div>
 
 
@@ -57,7 +67,7 @@ const MainBanner = () => {
 
             <div className='flex flex-col sm:flex-row gap-4 pt-4'>
               <Link
-                to="/donorpage"
+                to={user ? "/donorpage" : "/login"}
                 className='inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-red-600 to-orange-600 text-white font-bold rounded-xl hover:from-red-700 hover:to-orange-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-red-500/40 hover:-translate-y-1 group'
               >
                 Donate Now
@@ -67,7 +77,7 @@ const MainBanner = () => {
               </Link>
 
               <Link
-                to="/finderspage"
+                to={user ? "/finderspage" : "/login"}
                 className='inline-flex items-center justify-center px-8 py-4 bg-white text-gray-800 font-bold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:border-gray-300'
               >
                 Find Donors

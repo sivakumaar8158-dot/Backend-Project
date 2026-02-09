@@ -351,8 +351,8 @@ const DonationProcess = () => {
                 There is a critical need for blood. Be the lifesaver your community needs today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/register" className="px-8 py-4 bg-red-600 text-white font-bold rounded-xl shadow-lg hover:bg-red-700 transition-all transform hover:scale-105">
-                  Register to Donate
+                <Link to="/donorpage" className="px-8 py-4 bg-red-600 text-white font-bold rounded-xl shadow-lg hover:bg-red-700 transition-all transform hover:scale-105">
+                  Donate Now
                 </Link>
                 <Link to="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-gray-900 transition-all">
                   Contact Us

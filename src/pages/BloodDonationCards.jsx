@@ -47,7 +47,7 @@ const BloodDonationCards = () => {
                     <Card
                         title="Donate Blood"
                         description="Be a hero in someone's life. Your donation can save up to three lives. Register today to become a donor."
-                        link="/register"
+                        link="/login"
                         colorClass="from-red-400 to-red-600"
                         buttonColor="from-red-500 to-pink-600"
                         icon={
@@ -60,7 +60,7 @@ const BloodDonationCards = () => {
                     <Card
                         title="Find a Donor"
                         description="Urgent need for blood? Connect with nearby donors quickly and easily through our network."
-                        link="/finderspage"
+                        link="/login"
                         colorClass="from-orange-400 to-yellow-500"
                         buttonColor="from-orange-500 to-yellow-600"
                         icon={
@@ -73,7 +73,7 @@ const BloodDonationCards = () => {
                     <Card
                         title="Check Eligibility"
                         description="Not sure if you can donate? Take a quick check to see if you are eligible to become a blood donor."
-                        link="/eligibility"
+                        link="/login"
                         colorClass="from-blue-400 to-teal-500"
                         buttonColor="from-blue-500 to-teal-600"
                         icon={
