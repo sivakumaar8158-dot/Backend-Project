@@ -9,15 +9,46 @@ const NavBar = () => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('currentUser');
-    if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch (error) {
-        console.error("Error parsing user data:", error);
-        localStorage.removeItem('currentUser');
+    const checkUser = () => {
+      const sessionUser = sessionStorage.getItem('currentUser');
+      const localUser = localStorage.getItem('currentUser');
+      const storedUser = sessionUser || localUser;
+
+      if (storedUser) {
+        try {
+          setUser(JSON.parse(storedUser));
+        } catch (error) {
+          console.error("Error parsing user data:", error);
+          sessionStorage.removeItem('currentUser');
+          localStorage.removeItem('currentUser');
+        }
+      } else {
+        setUser(null);
       }
-    }
+    };
+
+    checkUser();
+
+    const handleStorageChange = (e) => {
+      if (e.key === 'currentUser') {
+        checkUser();
+        if (!e.newValue) {
+          
+          setUser(null);
+          navigate('/');
+        }
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    
+    window.addEventListener('auth-change', checkUser);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('auth-change', checkUser);
+    };
   }, []);
 
   useEffect(() => {
@@ -35,6 +66,11 @@ const NavBar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('currentUser');
+
+    
+    window.dispatchEvent(new Event('storage'));
+
     setUser(null);
     setShowDropdown(false);
     navigate('/');

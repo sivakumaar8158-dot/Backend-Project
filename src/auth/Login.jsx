@@ -9,6 +9,7 @@ const Login = ({ onSuccess }) => {
     email: '',
     password: '',
   });
+  const [rememberMe, setRememberMe] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,7 +40,11 @@ const Login = ({ onSuccess }) => {
     }
 
 
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    if (rememberMe) {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+    } else {
+      sessionStorage.setItem('currentUser', JSON.stringify(user));
+    }
 
     toast.success('Login successful!');
 
@@ -123,7 +128,14 @@ const Login = ({ onSuccess }) => {
 
           <div className="flex items-center justify-between mt-2">
             <div className="flex items-center">
-              <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded cursor-pointer" />
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded cursor-pointer"
+              />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-600 font-medium cursor-pointer">Remember me</label>
             </div>
             <div className="text-sm">

@@ -11,30 +11,39 @@ import DonationProcess from "../pages/DonationProcess"
 import HealthBenefits from "../pages/HealthBenefits"
 import FaqPage from "../pages/FaqPage"
 import Myths from "../pages/Myths"
+import ProtectedRoute from "./ProtectedRoute"
 
 
 const AppRoute = () => {
   return (
     <>
-    
-    <Routes>
-    <Route element={<ContentNav/>}>
-       <Route path="/" element={<Home/>}/>
-       <Route path="/donorpage" element={<DonorPage/>}/>
-       <Route path="/finderspage" element={<FindersPage/>}/>
-       <Route path="/mainhome" element={<MainHome/>}/>
-       <Route path="/bloodtypes" element={<BloodTypes/>}/>
-       <Route path="/donationprocess" element={<DonationProcess/>}/>
-       <Route path="/healthbenefits" element={<HealthBenefits/>}/>
-       <Route path="/faq" element={<FaqPage/>}/>
-       <Route path="/myths" element={<Myths/>}/>
-     
-    </Route>
-       <Route path="/register" element={<Register/>}/>
-       <Route path="/login" element={<Login/>}/>
 
-    </Routes>
-    
+      <Routes>
+        
+        <Route element={<ContentNav />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+
+        
+        <Route element={<ProtectedRoute />}>
+          <Route element={<ContentNav />}>
+            <Route path="/donorpage" element={<DonorPage />} />
+            <Route path="/finderspage" element={<FindersPage />} />
+            <Route path="/mainhome" element={<MainHome />} />
+            <Route path="/bloodtypes" element={<BloodTypes />} />
+            <Route path="/donationprocess" element={<DonationProcess />} />
+            <Route path="/healthbenefits" element={<HealthBenefits />} />
+            <Route path="/faq" element={<FaqPage />} />
+            <Route path="/myths" element={<Myths />} />
+          </Route>
+        </Route>
+
+        
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+
+      </Routes>
+
     </>
   )
 }
