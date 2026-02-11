@@ -48,7 +48,7 @@ const Myths = () => {
         {/* Header Section */}
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-5xl font-black bg-linear-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
-            Myths vs. Facts
+            Myths vs Facts
           </h1>
           <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Let's clear the air. Don't let misconceptions stop you from being a hero.
