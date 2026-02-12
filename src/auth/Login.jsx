@@ -32,10 +32,18 @@ const Login = ({ onSuccess }) => {
 
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(u => u.email === formData.email && u.password === formData.password);
+
+    // First check if user exists with that email
+    const user = users.find(u => u.email === formData.email);
 
     if (!user) {
-      toast.error('Invalid email or password');
+      toast.error('Email not registered');
+      return;
+    }
+
+    // Then check if password matches
+    if (user.password !== formData.password) {
+      toast.error('Invalid password');
       return;
     }
 

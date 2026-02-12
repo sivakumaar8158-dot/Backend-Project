@@ -11,6 +11,7 @@ import DonationProcess from "../pages/DonationProcess"
 import HealthBenefits from "../pages/HealthBenefits"
 import FaqPage from "../pages/FaqPage"
 import Myths from "../pages/Myths"
+import Profile from "../auth/Profile"
 import ProtectedRoute from "./ProtectedRoute"
 
 
@@ -19,12 +20,12 @@ const AppRoute = () => {
     <>
 
       <Routes>
-        
+
         <Route element={<ContentNav />}>
           <Route path="/" element={<Home />} />
         </Route>
 
-        
+
         <Route element={<ProtectedRoute />}>
           <Route element={<ContentNav />}>
             <Route path="/donorpage" element={<DonorPage />} />
@@ -35,10 +36,11 @@ const AppRoute = () => {
             <Route path="/healthbenefits" element={<HealthBenefits />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/myths" element={<Myths />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
         </Route>
 
-        
+
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 

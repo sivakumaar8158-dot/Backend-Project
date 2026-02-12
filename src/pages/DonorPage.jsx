@@ -43,6 +43,21 @@ const DonorPage = () => {
 
     // Simulating backend storage with localStorage
     const existingDonors = JSON.parse(localStorage.getItem('donors') || '[]');
+
+    // Check if email or mobile already exists
+    const isDuplicate = existingDonors.some(donor =>
+      (formData.email && donor.email === formData.email) ||
+      (donor.mobile === formData.mobile)
+    );
+
+    if (isDuplicate) {
+      toast.error("Mobile number or Email is already registered as a donor.", {
+        position: "top-right",
+        autoClose: 5000,
+      });
+      return;
+    }
+
     const newDonor = { ...formData, id: Date.now() }; // Add simple ID
     const updatedDonors = [...existingDonors, newDonor];
     localStorage.setItem('donors', JSON.stringify(updatedDonors));
