@@ -41,7 +41,6 @@ const Login = ({ onSuccess }) => {
       return;
     }
 
-    // Then check if password matches
     if (user.password !== formData.password) {
       toast.error('Invalid password');
       return;

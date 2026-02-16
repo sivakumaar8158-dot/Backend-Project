@@ -38,13 +38,13 @@ const DonorPage = () => {
       return;
     }
 
-    // Attempting to submit
+    
     console.log("Form Data:", formData);
 
-    // Simulating backend storage with localStorage
+    
     const existingDonors = JSON.parse(localStorage.getItem('donors') || '[]');
 
-    // Check if email or mobile already exists
+    
     const isDuplicate = existingDonors.some(donor =>
       (formData.email && donor.email === formData.email) ||
       (donor.mobile === formData.mobile)
@@ -58,7 +58,7 @@ const DonorPage = () => {
       return;
     }
 
-    const newDonor = { ...formData, id: Date.now() }; // Add simple ID
+    const newDonor = { ...formData, id: Date.now() }; 
     const updatedDonors = [...existingDonors, newDonor];
     localStorage.setItem('donors', JSON.stringify(updatedDonors));
 
@@ -67,7 +67,7 @@ const DonorPage = () => {
       autoClose: 3000
     });
 
-    // Reset form
+    
     setFormData({
       fullName: '',
       email: '',
@@ -85,7 +85,7 @@ const DonorPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <ToastContainer />
-      {/* Header Section */}
+      
       <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in-up">
         <span className="text-red-600 font-bold tracking-wider uppercase text-sm bg-red-50 px-4 py-2 rounded-full mb-4 inline-block">Join our Community</span>
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
@@ -98,7 +98,7 @@ const DonorPage = () => {
 
       <div className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
         <div className="md:flex">
-          {/* Side Content / Info Panel */}
+          
           <div className="md:w-1/3 bg-linear-to-br from-red-600 to-orange-600 p-8 text-white flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-bold mb-6">Why Register?</h3>
@@ -130,12 +130,12 @@ const DonorPage = () => {
             </div>
           </div>
 
-          {/* Form Section */}
+          
           <div className="md:w-2/3 p-8 lg:p-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Donor Registration</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
 
-              {/* Personal Details */}
+              
               <div>
                 <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Personal Details</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -197,7 +197,7 @@ const DonorPage = () => {
                         name="age"
                         value={formData.age}
                         onChange={handleChange}
-                        required // Using custom validation in onSubmit, but required ensures checking
+                        required 
                         className="block w-full rounded-lg border-gray-300 bg-gray-50 border focus:bg-white focus:border-red-500 focus:ring-red-500 sm:text-sm py-3 px-4 transition-colors"
                         placeholder="Age"
                       />
@@ -226,7 +226,7 @@ const DonorPage = () => {
                 </div>
               </div>
 
-              {/* Location Details */}
+              
               <div>
                 <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 border-b border-gray-100 pb-2 mt-6">Location</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -275,7 +275,7 @@ const DonorPage = () => {
                 </div>
               </div>
 
-              {/* Medical Details */}
+              
               <div>
                 <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4 border-b border-gray-100 pb-2 mt-6">Health Information</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

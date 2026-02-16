@@ -45,7 +45,7 @@ const Myths = () => {
     <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
-        {/* Header Section */}
+        
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl md:text-5xl font-black bg-linear-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
             Myths vs Facts
@@ -57,7 +57,7 @@ const Myths = () => {
           <div className="w-24 h-1.5 bg-linear-to-r from-red-500 to-orange-400 mx-auto rounded-full mt-6"></div>
         </div>
 
-        {/* Myths Grid */}
+      
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {myths.map((item, index) => (
             <div
@@ -88,7 +88,7 @@ const Myths = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
+        
         <div className="mt-20 bg-linear-to-tr from-red-600 to-orange-500 rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-orange-500/30">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
           <div className="relative z-10 space-y-6">

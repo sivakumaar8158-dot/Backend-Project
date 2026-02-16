@@ -120,7 +120,7 @@ const Register = ({ onSuccess }) => {
                   value={formData.fullName}
                   onChange={handleChange}
                   className="block w-full pl-11 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all font-medium text-gray-900 placeholder-gray-400 outline-none"
-                  placeholder="Ajith Kumar"
+                  placeholder="Enter your full name"
                 />
               </div>
             </div>

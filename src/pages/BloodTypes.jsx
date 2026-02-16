@@ -63,7 +63,7 @@ const BloodTypes = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-16 px-6">
 
-      {/* Header Section */}
+      
       <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in-up">
         <span className="text-red-600 font-bold tracking-wider uppercase text-sm bg-red-50 px-4 py-2 rounded-full mb-4 inline-block">Education</span>
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
@@ -75,7 +75,7 @@ const BloodTypes = () => {
         </p>
       </div>
 
-      {/* Blood Types Grid */}
+      
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
         {bloodTypes.map((blood, index) => (
           <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group">
@@ -98,7 +98,7 @@ const BloodTypes = () => {
         ))}
       </div>
 
-      {/* Compatibility Chart Section */}
+      
       <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mb-20 border border-gray-100">
         <div className="bg-linear-to-r from-red-600 to-orange-600 p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Compatibility Guidelines</h2>
@@ -171,7 +171,7 @@ const BloodTypes = () => {
         </div>
       </section>
 
-      {/* Guidelines Section */}
+      
       <section className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-black text-gray-900 mb-10 text-center">Donation Guidelines</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

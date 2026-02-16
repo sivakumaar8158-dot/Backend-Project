@@ -41,7 +41,6 @@ const FaqPage = () => {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
 
-        {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h1 className="text-4xl font-black bg-linear-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
             Frequently Asked Questions
@@ -53,7 +52,7 @@ const FaqPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-          {/* FAQ Accordion */}
+          
           <div className="lg:col-span-2 space-y-4">
             {faqs.map((faq, index) => (
               <div
@@ -86,7 +85,7 @@ const FaqPage = () => {
             ))}
           </div>
 
-          {/* Tips Sidebar */}
+          
           <div className="lg:col-span-1">
             <div className="bg-linear-to-br from-red-500 to-orange-500 rounded-3xl p-6 text-white shadow-xl shadow-orange-500/20 sticky top-28">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">

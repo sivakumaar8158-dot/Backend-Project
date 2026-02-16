@@ -7,7 +7,7 @@ const FindersPage = () => {
   const [bloodFilter, setBloodFilter] = useState('');
 
   useEffect(() => {
-    // Load donors from localStorage
+    
     const storedDonors = JSON.parse(localStorage.getItem('donors') || '[]');
     setDonors(storedDonors);
   }, []);
@@ -22,7 +22,7 @@ const FindersPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      {/* Header Section */}
+      
       <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in-up">
         <span className="text-red-600 font-bold tracking-wider uppercase text-sm bg-red-50 px-4 py-2 rounded-full mb-4 inline-block">Find Help</span>
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
@@ -33,7 +33,7 @@ const FindersPage = () => {
         </p>
       </div>
 
-      {/* Search and Filter Section */}
+      
       <div className="max-w-6xl mx-auto mb-12">
         <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col md:flex-row gap-4 items-center">
           <div className="relative w-full md:w-2/3">
@@ -68,7 +68,7 @@ const FindersPage = () => {
         </div>
       </div>
 
-      {/* Donors Grid */}
+      
       <div className="max-w-7xl mx-auto">
         {filteredDonors.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

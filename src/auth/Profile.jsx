@@ -24,13 +24,13 @@ const Profile = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 p-4 sm:p-8 relative overflow-hidden font-sans">
-            {/* Soft Ambient Background */}
+            
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-200/40 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3"></div>
 
             <div className="max-w-6xl mx-auto relative z-10">
 
-                {/* Header / Nav Area */}
+                
                 <div className="flex justify-between items-center mb-8">
                     <div>
                         <h1 className="text-3xl font-black text-gray-900 tracking-tight">Dashboard</h1>
@@ -42,10 +42,10 @@ const Profile = () => {
                     </div>
                 </div>
 
-                {/* Bento Grid Layout */}
+                
                 <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-auto gap-4 md:gap-6">
 
-                    {/* 1. Main Profile Card (Large) */}
+                   
                     <div className="col-span-1 md:col-span-2 row-span-2 bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl hover:shadow-gray-200/60 transition-all duration-500">
                         <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
                             <svg className="w-64 h-64 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" /></svg>
@@ -72,7 +72,7 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    {/* 3. Donation Status Card */}
+                   
                     <div className="col-span-1 md:col-span-2 bg-white rounded-[2rem] p-6 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col justify-between group hover:border-green-400 transition-colors duration-300">
                         <div className="flex justify-between items-start">
                             <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-500">
@@ -87,7 +87,7 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    {/* 5. Stats / History (Tall) */}
+                    
                     <div className="col-span-1 md:col-span-2 row-span-2 bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col">
                         <div className="flex justify-between items-center mb-6">
                             <h3 className="text-xl font-black text-gray-900">Your Impact</h3>

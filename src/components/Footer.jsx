@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
 
 
-            {/* Community Highlights - Attractive Non-Count Elements */}
+            
             <div>
               <h5 className='font-bold text-gray-900 mb-5 flex items-center gap-2'>
                 <span className='w-2 h-2 rounded-full bg-orange-500'></span>
