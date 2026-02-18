@@ -12,7 +12,9 @@ import HealthBenefits from "../pages/HealthBenefits"
 import FaqPage from "../pages/FaqPage"
 import Myths from "../pages/Myths"
 import Profile from "../auth/Profile"
+import ContactSupport from "../pages/ContactSupport"
 import ProtectedRoute from "./ProtectedRoute"
+
 
 
 const AppRoute = () => {
@@ -37,6 +39,7 @@ const AppRoute = () => {
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/myths" element={<Myths />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<ContactSupport />} />
           </Route>
         </Route>
 

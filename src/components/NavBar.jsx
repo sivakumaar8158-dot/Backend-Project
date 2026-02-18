@@ -186,6 +186,9 @@ const NavBar = () => {
                         <Link to="/faq" onClick={() => setShowDropdown(false)} className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition-colors">
                           FAQ
                         </Link>
+                        <Link to="/contact" onClick={() => setShowDropdown(false)} className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 rounded-xl hover:bg-orange-50 hover:text-orange-600 transition-colors">
+                          Contact Support
+                        </Link>
                         <div className="h-px bg-gray-100 my-1"></div>
                         <button
                           onClick={handleLogout}
