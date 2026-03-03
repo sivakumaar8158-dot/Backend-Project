@@ -71,7 +71,7 @@ const ContactSupport = () => {
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                         Always Here For You
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 tracking-tight leading-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-gray-900 mb-6 md:mb-8 tracking-tight leading-tight">
                         We'd love to <br className="hidden md:block" /> hear from <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">you</span>
                     </h1>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
@@ -81,8 +81,8 @@ const ContactSupport = () => {
             </section>
 
             {/* Split Layout: Contact & Form */}
-            <section className="py-12 px-6 max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <section className="py-8 md:py-12 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start">
 
                     {/* Left Side: Contact Info & FAQ */}
                     <div className="space-y-12">
@@ -134,8 +134,8 @@ const ContactSupport = () => {
                     </div>
 
                     {/* Right Side: Clean Form */}
-                    <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 p-8 md:p-12 relative">
-                        <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 p-6 sm:p-8 md:p-12 relative">
+                        <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
                             <div>
                                 <h2 className="text-3xl font-bold text-gray-900 mb-2">Send Message</h2>
                                 <p className="text-gray-500">Fill in the form and we'll get back to you shortly.</p>

@@ -68,8 +68,8 @@ const DonationProcess = () => {
             <span className="inline-block px-4 py-2 rounded-full bg-red-100 border border-red-200 text-red-700 font-medium text-sm">
               Save 3 Lives in 15 Minutes
             </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
-              The Journey to <span className="text-transparent bg-clip-text bg-linear-to-r from-red-600 to-orange-600">Saving a Life</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
+              The Journey to <br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-linear-to-r from-red-600 to-orange-600">Saving a Life</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed">
               Understand the simple, safe, and rewarding process of blood donation. Your contribution matters more than you know.
@@ -89,11 +89,11 @@ const DonationProcess = () => {
 
           <div className="md:w-1/2 flex justify-center relative">
 
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
               <div className="absolute inset-0 bg-red-100 rounded-full blur-3xl animate-pulse opacity-60"></div>
               <div className="relative w-full h-full bg-white rounded-full shadow-2xl flex items-center justify-center border-8 border-red-50 animate-float">
-                <div className="w-64 h-64 bg-linear-to-br from-red-500 via-red-600 to-orange-500 rounded-full flex items-center justify-center shadow-inner">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-32 w-32 text-white drop-shadow-md" viewBox="0 0 20 20" fill="currentColor">
+                <div className="w-48 h-48 sm:w-64 sm:h-64 bg-linear-to-br from-red-500 via-red-600 to-orange-500 rounded-full flex items-center justify-center shadow-inner">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 sm:h-32 sm:w-32 text-white drop-shadow-md" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -127,16 +127,16 @@ const DonationProcess = () => {
 
           {steps.map((step, index) => (
             <div key={step.id} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="w-24 h-24 rounded-full bg-white border-4 border-red-100 flex items-center justify-center shadow-lg group-hover:border-red-500 group-hover:scale-110 transition-all duration-300 mb-6 relative">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white border-4 border-red-100 flex items-center justify-center shadow-lg group-hover:border-red-500 group-hover:scale-110 transition-all duration-300 mb-6 relative">
                 <div className="text-red-500 group-hover:text-red-600 transition-colors">
                   {step.icon}
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold shadow-md">
+                <div className="absolute -top-2 -right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold shadow-md text-sm sm:text-base">
                   {step.id}
                 </div>
               </div>
-              <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-600 transition-colors">{step.title}</h4>
-              <p className="text-gray-500 text-sm leading-relaxed px-4">{step.description}</p>
+              <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 group-hover:text-red-600 transition-colors">{step.title}</h4>
+              <p className="text-gray-500 text-sm leading-relaxed px-2 sm:px-4">{step.description}</p>
             </div>
           ))}
         </div>

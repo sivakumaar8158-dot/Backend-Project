@@ -54,31 +54,31 @@ const MainBanner = () => {
             </div>
 
 
-            <h1 className='text-5xl md:text-6xl/tight lg:text-7xl/tight font-extrabold text-gray-900 tracking-tight'>
-              Every Drop <br />
+            <h1 className='text-4xl sm:text-5xl md:text-6xl/tight lg:text-7xl/tight font-extrabold text-gray-900 tracking-tight leading-10 sm:leading-none'>
+              Every Drop <br className="hidden sm:block" />
               <span className='bg-linear-to-r from-red-600 to-orange-600 bg-clip-text text-transparent filter drop-shadow-sm'>Counts Forever</span>
             </h1>
 
 
-            <p className='text-lg md:text-xl text-gray-600 leading-relaxed font-medium max-w-lg'>
+            <p className='text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-medium max-w-lg'>
               Join our community of everyday heroes. A single donation can save up to three lives. Make a difference today.
             </p>
 
 
-            <div className='flex flex-col sm:flex-row gap-4 pt-4'>
+            <div className='flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 w-full max-w-sm sm:max-w-none mx-auto sm:mx-0'>
               <Link
                 to={user ? "/donorpage" : "/login"}
-                className='inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-red-600 to-orange-600 text-white font-bold rounded-xl hover:from-red-700 hover:to-orange-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-red-500/40 hover:-translate-y-1 group'
+                className='inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-linear-to-r from-red-600 to-orange-600 text-white font-bold rounded-xl hover:from-red-700 hover:to-orange-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-red-500/40 hover:-translate-y-1 group w-full sm:w-auto text-sm sm:text-base'
               >
                 Donate Now
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
 
               <Link
                 to={user ? "/finderspage" : "/login"}
-                className='inline-flex items-center justify-center px-8 py-4 bg-white text-gray-800 font-bold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:border-gray-300'
+                className='inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-800 font-bold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:border-gray-300 w-full sm:w-auto text-sm sm:text-base'
               >
                 Find Donors
               </Link>

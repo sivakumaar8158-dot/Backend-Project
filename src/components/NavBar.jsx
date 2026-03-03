@@ -5,8 +5,10 @@ import Logo from '../assets/MainLogo.png'
 const NavBar = () => {
   const [user, setUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   useEffect(() => {
     const checkUser = () => {
@@ -56,6 +58,9 @@ const NavBar = () => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowDropdown(false);
       }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setShowMobileMenu(false);
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -103,6 +108,49 @@ const NavBar = () => {
 
             {user ? (
               <div className="flex items-center gap-3 sm:gap-6">
+
+                {/* Mobile Menu Toggle */}
+                <div className="sm:hidden relative" ref={mobileMenuRef}>
+                  <button
+                    onClick={() => setShowMobileMenu(!showMobileMenu)}
+                    className="p-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      {showMobileMenu ? (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      ) : (
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                      )}
+                    </svg>
+                  </button>
+
+                  {/* Mobile Dropdown */}
+                  {showMobileMenu && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
+                      <Link
+                        to="/mainhome"
+                        onClick={() => setShowMobileMenu(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                      >
+                        Home
+                      </Link>
+                      <Link
+                        to="/finderspage"
+                        onClick={() => setShowMobileMenu(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                      >
+                        Find a Donor
+                      </Link>
+                      <Link
+                        to="/donorpage"
+                        onClick={() => setShowMobileMenu(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                      >
+                        Donate Now
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
                 <Link
                   to="/mainhome"
@@ -203,12 +251,12 @@ const NavBar = () => {
                 </div>
               </div>
             ) : (
-              <div className='flex items-center gap-2 bg-gray-100/80 p-1.5 rounded-full backdrop-blur-sm'>
-                <Link className='px-6 py-2.5 text-sm text-gray-600 font-semibold rounded-full transition-all duration-300 hover:bg-white hover:text-orange-600 hover:shadow-md'
+              <div className='flex items-center gap-1 sm:gap-2 bg-gray-100/80 p-1 sm:p-1.5 rounded-full backdrop-blur-sm'>
+                <Link className='px-3 py-1.5 sm:px-6 sm:py-2.5 text-xs sm:text-sm text-gray-600 font-semibold rounded-full transition-all duration-300 hover:bg-white hover:text-orange-600 hover:shadow-md'
                   to="/" > Home </Link>
-                <Link className='px-6 py-2.5 text-sm text-gray-600 font-semibold rounded-full transition-all duration-300 hover:bg-white hover:text-orange-600 hover:shadow-md'
+                <Link className='px-3 py-1.5 sm:px-6 sm:py-2.5 text-xs sm:text-sm text-gray-600 font-semibold rounded-full transition-all duration-300 hover:bg-white hover:text-orange-600 hover:shadow-md'
                   to="/register" > Register </Link>
-                <Link className='px-6 py-2.5 bg-linear-to-r from-yellow-400 to-orange-500 text-white font-bold text-sm rounded-full shadow-lg shadow-orange-500/30 transition-all duration-300 hover:shadow-orange-500/50 hover:scale-105 active:scale-95'
+                <Link className='px-4 py-1.5 sm:px-6 sm:py-2.5 bg-linear-to-r from-yellow-400 to-orange-500 text-white font-bold text-xs sm:text-sm rounded-full shadow-lg shadow-orange-500/30 transition-all duration-300 hover:shadow-orange-500/50 hover:scale-105 active:scale-95'
                   to="/login" > Login </Link>
               </div>
             )}
