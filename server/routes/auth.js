@@ -41,6 +41,8 @@ router.post('/register', async (req, res) => {
           id: user._id,
           fullName: user.fullName,
           email: user.email,
+          role: user.role,
+          isBlocked: user.isBlocked,
           registeredAt: user.registeredAt,
         },
       });
@@ -70,6 +72,8 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid credentials' });
     }
 
+
+
     // Check password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
@@ -89,6 +93,8 @@ router.post('/login', async (req, res) => {
         id: user._id,
         fullName: user.fullName,
         email: user.email,
+        role: user.role,
+        isBlocked: user.isBlocked,
         registeredAt: user.registeredAt,
       },
     });

@@ -76,7 +76,11 @@ router.post('/', protect, async (req, res) => {
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    const donors = await Donor.find({}).sort({ createdAt: -1 });
+    const User = require('../models/User');
+    const blockedUsers = await User.find({ isBlocked: true }).select('_id');
+    const blockedUserIds = blockedUsers.map(u => u._id);
+
+    const donors = await Donor.find({ registeredBy: { $nin: blockedUserIds } }).sort({ createdAt: -1 });
     res.json({
       success: true,
       count: donors.length,

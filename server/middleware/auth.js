@@ -24,6 +24,28 @@ const protect = async (req, res, next) => {
         return res.status(401).json({ success: false, message: 'Not authorized, user not found' });
       }
 
+      if (req.user.isBlocked) {
+        const allowedPaths = [
+          '/api/auth/profile',
+          '/api/complaints/my-complaints'
+        ];
+        const isAppealRoute = 
+          req.baseUrl === '/api/complaints' && 
+          req.path.endsWith('/appeal') && 
+          req.method === 'PUT';
+        
+        const path = req.originalUrl || (req.baseUrl + req.path);
+        const isAllowed = allowedPaths.some(p => path.startsWith(p)) || isAppealRoute;
+
+        if (!isAllowed) {
+          return res.status(403).json({ 
+            success: false, 
+            isBlocked: true, 
+            message: 'Your account has been suspended by an admin.' 
+          });
+        }
+      }
+
       return next();
     } catch (error) {
       console.error('Auth middleware verification error:', error.message);
@@ -34,4 +56,12 @@ const protect = async (req, res, next) => {
   return res.status(401).json({ success: false, message: 'Not authorized, no token provided' });
 };
 
-module.exports = { protect };
+const admin = (req, res, next) => {
+  if (req.user && req.user.role === 'admin') {
+    next();
+  } else {
+    return res.status(403).json({ success: false, message: 'Access denied: Admin role required' });
+  }
+};
+
+module.exports = { protect, admin };
