@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const Donor = require('../models/Donor');
+const Complaint = require('../models/Complaint');
 const { protect } = require('../middleware/auth');
 
 // @desc    Register a new user
@@ -117,6 +119,37 @@ router.get('/profile', protect, async (req, res) => {
   } catch (error) {
     console.error('Profile error:', error);
     res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
+
+// @desc    Delete user account permanently
+// @route   DELETE /api/auth/profile
+// @access  Private
+router.delete('/profile', protect, async (req, res) => {
+  try {
+    const userId = req.user._id;
+
+    // Delete user
+    await User.findByIdAndDelete(userId);
+
+    // Delete donor profile if exists
+    await Donor.findOneAndDelete({ registeredBy: userId });
+
+    // Delete related complaints
+    await Complaint.deleteMany({
+      $or: [
+        { reportedBy: userId },
+        { reportedUser: userId }
+      ]
+    });
+
+    res.json({
+      success: true,
+      message: 'Your account and all associated data have been permanently deleted.'
+    });
+  } catch (error) {
+    console.error('Delete account error:', error);
+    res.status(500).json({ success: false, message: 'Server error during account deletion' });
   }
 });
 
