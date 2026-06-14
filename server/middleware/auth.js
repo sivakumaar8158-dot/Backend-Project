@@ -24,6 +24,14 @@ const protect = async (req, res, next) => {
         return res.status(401).json({ success: false, message: 'Not authorized, user not found' });
       }
 
+      // Update user activity timestamp and online status asynchronously
+      User.findByIdAndUpdate(decoded.id, { 
+        lastActiveAt: new Date(),
+        isOnline: true
+      }).catch(err => 
+        console.error('Error updating user activity and online status:', err)
+      );
+
       if (req.user.isBlocked) {
         const allowedPaths = [
           '/api/auth/profile',

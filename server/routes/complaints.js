@@ -107,6 +107,54 @@ router.get('/admin', protect, admin, async (req, res) => {
   }
 });
 
+// @desc    Get all users activity data and portal activity statistics
+// @route   GET /api/complaints/admin/users/activity
+// @access  Private/Admin
+router.get('/admin/users/activity', protect, admin, async (req, res) => {
+  try {
+    const users = await User.find({})
+      .select('fullName email role isBlocked registeredAt loginCount lastLoginAt lastActiveAt isOnline')
+      .sort({ lastActiveAt: -1 });
+
+    const totalUsers = users.length;
+    let totalLogins = 0;
+    let onlineNowCount = 0;
+    let activeTodayCount = 0;
+
+    const now = new Date();
+    const fifteenMinutesAgo = new Date(now.getTime() - 15 * 60 * 1000);
+    const twentyFourHoursAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+    users.forEach(u => {
+      totalLogins += (u.loginCount || 0);
+      
+      const lastActive = u.lastActiveAt ? new Date(u.lastActiveAt) : null;
+      if (lastActive) {
+        if (u.isOnline && lastActive >= fifteenMinutesAgo) {
+          onlineNowCount++;
+        }
+        if (lastActive >= twentyFourHoursAgo) {
+          activeTodayCount++;
+        }
+      }
+    });
+
+    res.json({
+      success: true,
+      stats: {
+        totalUsers,
+        totalLogins,
+        onlineNowCount,
+        activeTodayCount,
+      },
+      users,
+    });
+  } catch (error) {
+    console.error('Fetch user activity error:', error);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
+
 // @desc    Update complaint status
 // @route   PUT /api/complaints/admin/:id/status
 // @access  Private/Admin

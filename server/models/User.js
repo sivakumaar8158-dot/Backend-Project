@@ -39,6 +39,21 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  loginCount: {
+    type: Number,
+    default: 0,
+  },
+  lastLoginAt: {
+    type: Date,
+  },
+  lastActiveAt: {
+    type: Date,
+    default: Date.now,
+  },
+  isOnline: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model('User', UserSchema);
