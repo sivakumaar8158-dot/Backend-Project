@@ -77,6 +77,7 @@ app.use(express.json()); // Body parser
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/donors', require('./routes/donors'));
 app.use('/api/complaints', require('./routes/complaints'));
+app.use('/api/support', require('./routes/support'));
 
 // Root Route
 app.get('/', (req, res) => {

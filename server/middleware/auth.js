@@ -35,7 +35,8 @@ const protect = async (req, res, next) => {
       if (req.user.isBlocked) {
         const allowedPaths = [
           '/api/auth/profile',
-          '/api/complaints/my-complaints'
+          '/api/complaints/my-complaints',
+          '/api/support/my-messages'
         ];
         const isAppealRoute = 
           req.baseUrl === '/api/complaints' && 
